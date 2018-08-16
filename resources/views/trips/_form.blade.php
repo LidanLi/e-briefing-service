@@ -1,5 +1,5 @@
 <div class="field">
-    <label class="label" for="name">{{ __('Trip name') }}</label>
+    <label class="label" for="name">{{ __('Course name') }}</label>
     <p class="control">
         <input type="text" class="input" name="name" id="name" value="{{ old('name', $trip->name) }}">
     </p>

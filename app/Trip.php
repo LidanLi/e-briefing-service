@@ -28,6 +28,11 @@ class Trip extends Model
         return $this->hasMany(Document::class);
     }
 
+      public function links()
+    {
+        return $this->hasMany(Link::class);
+    }
+
     public function creator()
     {
         return $this->belongsTo(User::class, 'created_by_id');

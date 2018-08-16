@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="title">{{ __('Create a Trip') }}</h1>
+        <h1 class="title">{{ __('Create a Course') }}</h1>
 
         @include('layouts.flash')
 

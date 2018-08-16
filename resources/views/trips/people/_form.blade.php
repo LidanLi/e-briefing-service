@@ -37,3 +37,12 @@
         <markdown-textarea name="body" id="body" contents="{{ old('body', $person->body) }}"></markdown-textarea>
     </p>
 </div>
+
+<div class="field">
+    <p class="control">
+        <label class="checkbox">
+            {{ Form::checkbox('is_participant', 1, $person->is_participant) }}
+            Check the box if the person is a particiant
+        </label>
+    </p>
+</div>

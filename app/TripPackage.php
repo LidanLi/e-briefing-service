@@ -63,6 +63,13 @@ class TripPackage
         {
             $this->generatePersonJson($person);
         }
+
+        $this->generateLinksJson($trip);
+
+        foreach ($trip->links as $link)
+        {
+            $this->generateLinkJson($link);
+        }
     }
 
     protected function generateDayJson(Day $day)
@@ -89,7 +96,7 @@ class TripPackage
 
     protected function generateEventJson(Event $event)
     {
-        $json = Event::with('contacts', 'participants', 'documents')->find($event->id)->toJson();
+        $json = Event::with('contacts', 'participants', 'documents', 'links')->find($event->id)->toJson();
 
         Storage::put($this->storage_path . '/events/' . $event->id . '.json', $json);
     }
@@ -106,6 +113,21 @@ class TripPackage
         $json = Article::with('documents')->find($article->id)->toJson();
 
         Storage::put($this->storage_path . '/articles/' . $article->id . '.json', $json);
+    }
+
+
+    protected function generateLinksJson(Trip $trip)
+    {
+        $links = $trip->links->groupBy('link_type');
+
+        Storage::put($this->storage_path . '/links.json', $links->toJson());
+    }
+
+    protected function generatelinkJson(Link $link)
+    {
+        $json = $link->toJson();
+
+        Storage::put($this->storage_path . '/links/' . $link->id . '.json', $json);
     }
 
     protected function generatePeopleJson(Trip $trip)

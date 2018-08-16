@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="title">{{ __('Trips') }}
+    <h1 class="title">{{ __('Courses') }}
         <a href="{{ route('trips.create') }}" class="is-size-6">
             <span class="icon">
                 <i class="fa fa-plus-circle"></i>
             </span>
             <span>
-                {{ __('Create a Trip') }}
+                {{ __('Create a Course') }}
             </span>
         </a>
     </h1>
@@ -15,12 +15,12 @@
     @include('layouts.flash')
 
     @unless($trips->count())
-        {{ __('There are currently no trips defined') }}
+        {{ __('There are currently no courses defined') }}
     @else
         <table class="table">
             <thead>
                 <tr>
-                    <th>{{ __('Trip name') }}</th>
+                    <th>{{ __('Course name') }}</th>
                     <th>{{ __('Owner') }}</th>
                     <th></th>
                 </tr>
@@ -36,7 +36,7 @@
                                     <i class="fa fa-cogs"></i>
                                 </span>
                                 <span>
-                                    {{ __('Manage Trip') }}
+                                    {{ __('Manage Course') }}
                                 </span>
                             </a>
 

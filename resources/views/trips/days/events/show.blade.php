@@ -134,6 +134,34 @@
                                 </div>
                             </div>
                         @endforeach
+                    @endif
+                   
+                    <h3 class="title">Links
+                        <button class="button is-default pull-right" @click="isLinkModalActive = true">Add a Link</button>
+                    </h3>
+
+                    @unless($event->links->count())
+                        <div class="notification is-info">
+                            There are no links associated with this Event yet.
+                        </div>
+                    @endunless
+
+                    @if($event->links->count())
+
+                        @foreach($event->links as $link)
+                            <div class="columns">
+                                <div class="column is-three-quarters">
+                                    <a href="{{ url('storage/' . $link->file) }}">{{ $link->name }}</a>                                   
+                                </div>
+                                <div class="column">
+                                    <form action="{{ route('events.links.remove', ['event' => $event, 'link' => $link]) }}" method="post">
+                                        {{ method_field('DELETE') }}
+                                        {{ csrf_field() }}
+                                        <button class="button is-link">Remove</button>
+                                    </form>
+                                </div>
+                            </div>
+                        @endforeach
 
                     @endif
                 </div>
@@ -157,4 +185,10 @@
             :event="'{{ $event->id }}'"
             :csrf_token="'{{ csrf_token() }}'">
     </add-document-modal>
+
+      <add-link-modal
+            :active.sync="isLinkModalActive"
+            :event="'{{ $event->id }}'"
+            :csrf_token="'{{ csrf_token() }}'">
+    </add-link-modal>
 @endsection

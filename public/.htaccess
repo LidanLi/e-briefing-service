@@ -1,9 +1,10 @@
-<IfModule mod_rewrite.c>
+<IfModule mod_rewrite.c> 
     <IfModule mod_negotiation.c>
         Options -MultiViews
     </IfModule>
 
     RewriteEngine On
+    RewriteBase /e-briefing-service/public/
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d

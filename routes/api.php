@@ -27,9 +27,14 @@ Route::get('/events/{event}/documents/available', function (\App\Event $event) {
     return $event->available_documents;
 });
 
+Route::get('/events/{event}/links/available', function (\App\Event $event) {
+    return $event->available_links;
+});
+
+
 
 Route::get('/user', function() {
-    return \App\Trip::with('days', 'days.events', 'days.events.documents', 'days.events.people', 'articles', 'people')->first();
+    return \App\Trip::with('days', 'days.events', 'days.events.documents', 'days.events.people', 'days.events.links', 'articles', 'people')->first();
 });
 
 

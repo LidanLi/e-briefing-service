@@ -59,6 +59,20 @@ Route::resource('trips.documents', 'TripDocumentsController', ['only' => [
 Route::get('documents/{document}/preview', 'DocumentPreviewController');
 
 /*
+ * Links
+ */
+
+Route::resource('links', 'LinksController', ['only' => [
+    'edit', 'update', 'destroy'
+]]);
+
+Route::resource('trips.links', 'TripLinksController', ['only' => [
+    'index', 'create', 'store'
+]]);
+
+
+
+/*
  * Articles
  */
 Route::resource('articles', 'ArticlesController', ['only' => [
@@ -104,3 +118,8 @@ Route::put('events/{event}/documents', ['as' => 'events.documents.add', 'uses' =
 Route::get('events/{event}/documents/create', ['as' => 'events.documents.create', 'uses' => 'EventDocumentsController@create']);
 Route::post('events/{event}/documents', ['as' => 'events.documents.store', 'uses' => 'EventDocumentsController@store']);
 Route::delete('events/{event}/documents/{document}/remove', ['as' => 'events.documents.remove', 'uses' => 'EventDocumentsController@remove']);
+
+Route::put('events/{event}/links', ['as' => 'events.links.add', 'uses' => 'EventLinksController@add']);
+Route::get('events/{event}/links/create', ['as' => 'events.links.create', 'uses' => 'EventLinksController@create']);
+Route::post('events/{event}/links', ['as' => 'events.links.store', 'uses' => 'EventLinksController@store']);
+Route::delete('events/{event}/links/{link}/remove', ['as' => 'events.links.remove', 'uses' => 'EventLinksController@remove']);

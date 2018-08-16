@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'eBriefing Management') }}</title>
+    <title>{{ config('app.name', 'eCourse Management') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -19,13 +19,13 @@
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="{{ url('/') }}">
-                        e-Brief Management
+                        e-Course Management
                         <!-- <img class="nav-logo" src="/images/e-brief-logo.png" alt="E Briefing App Logo"> -->
                     </a>
                 </div>
                 <div class="navbar-menu">
                     @if(Auth::user())
-                        <a href="{{ route('trips.index') }}" class="navbar-item">Trips</a>
+                        <a href="{{ route('trips.index') }}" class="navbar-item">Courses</a>
                         @if(Auth::user()->is_admin)
                             <a href="{{ route('users.index') }}" class="navbar-item">Users</a>
                         @endif

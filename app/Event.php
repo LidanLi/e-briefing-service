@@ -35,6 +35,11 @@ class Event extends Model
         return $this->belongsToMany(Document::class);
     }
 
+       public function links()
+    {
+        return $this->belongsToMany(Link::class);
+    }
+
     public function getTripAttribute()
     {
         return $this->day->trip;
@@ -53,6 +58,11 @@ class Event extends Model
     public function getAvailableDocumentsAttribute()
     {
         return $this->trip->documents->diff($this->documents);
+    }
+
+     public function getAvailableLinksAttribute()
+    {
+        return $this->trip->links->diff($this->links);
     }
 
     public function getDescriptionHtmlAttribute()
