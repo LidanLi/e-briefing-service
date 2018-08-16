@@ -7,7 +7,7 @@
             <li><a href="{{ route('trips.show', $trip) }}">Course</a></li>
             <li><a href="{{ route('trips.days.index', $trip) }}">Itinerary</a></li>
             <li><a href="{{ route('trips.people.index', $trip) }}">People</a></li>
-            <li><a href="{{ route('trips.articles.index', $trip) }}">My Trip</a></li>
+            <li><a href="{{ route('trips.articles.index', $trip) }}">My Course</a></li>
             <li><a href="{{ route('trips.documents.index', $trip) }}">Documents</a></li>
             <li><a href="{{ route('trips.links.index', $trip) }}">Links</a></li>
         </ul>

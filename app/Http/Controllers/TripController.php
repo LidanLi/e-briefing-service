@@ -56,7 +56,7 @@ class TripController extends Controller
           'code' => $trip->id
         ]);
 
-        return redirect()->route('trips.days.index', $trip)->with('success', __('Trip created.  Now you may add Days, People, Articles and Documents to your Trip.'));
+        return redirect()->route('trips.days.index', $trip)->with('success', __('Course created.  Now you may add Days, People, Articles, Links and Documents to your course.'));
     }
 
     /**
@@ -107,7 +107,7 @@ class TripController extends Controller
             'description' => $request->description
         ]);
 
-        return redirect()->back()->with('success', __('Trip updated'));
+        return redirect()->back()->with('success', __('Course updated'));
     }
 
     /**

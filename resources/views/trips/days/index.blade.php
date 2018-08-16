@@ -41,7 +41,7 @@
             @include('layouts.flash')
 
             @unless($trip->days->count())
-                There are no Days added to this Trip yet!
+                There are no Days added to this Course yet!
             @endunless
 
             @if($trip->days->count())
