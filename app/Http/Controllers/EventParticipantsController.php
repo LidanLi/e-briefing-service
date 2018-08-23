@@ -46,7 +46,8 @@ class EventParticipantsController extends Controller
             'email' => $request->email,
             'telephone' => $request->telephone,
             'title' => $request->title,
-            'body' => $request->body
+            'body' => $request->body,
+            'is_participant' => $request->has('is_participant')
         ]);
 
         if ($request->hasFile('image')) {

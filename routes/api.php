@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/trips/{trip}/download', 'Api\DownloadTripPackageController')->middleware('auth:api');
+/*Route::get('/trips/{trip}/download', 'Api\DownloadTripPackageController');*/
 
 Route::get('/events/{event}/participants/available', function (\App\Event $event) {
     return $event->available_participants;
