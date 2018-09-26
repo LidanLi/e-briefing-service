@@ -42,7 +42,7 @@
             @include('layouts.flash')
 
             @unless($trip->documents->count())
-                There are no Documents added to this Trip yet!
+                There are no Documents added to this Course yet!
             @endunless
 
             @foreach($documentsByType as $type => $documents)
