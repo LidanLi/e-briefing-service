@@ -31,6 +31,18 @@
                         <td>{{ $trip->name }}</td>
                         <td>{{ $trip->creator->name }}</td>
                         <td class="has-text-right">
+                            <form class="is-inline download-form" action="{{ route('trips.copy', $trip) }}" method="POST">
+                                {{ csrf_field() }}
+                                <button type="submit" class="button download-button" onclick="return confirm('Are you sure you want to copy {{ $trip->name }}?')">
+                                    <span class="icon">
+                                        <i class="fa fa-copy"></i>
+                                    </span>
+                                    <span>
+                                        {{ __('Copy Course') }}
+                                    </span>
+                                </button>
+                            </form>
+
                             <a href="{{ route('trips.days.index', $trip) }}" class="button">
                                 <span class="icon">
                                     <i class="fa fa-cogs"></i>
@@ -40,17 +52,17 @@
                                 </span>
                             </a>
 
-                                <form class="is-inline download-form" action="{{ route('trips.generate', $trip) }}" method="POST">
-                                    {{ csrf_field() }}
-                                    <button type="submit" class="button download-button">
-                                        <span class="icon">
-                                            <i class="fa fa-download"></i>
-                                        </span>
-                                        <span>
-                                            {{ __('Generate package') }}
-                                        </span>
-                                    </button>
-                                </form>
+                            <form class="is-inline download-form" action="{{ route('trips.generate', $trip) }}" method="POST">
+                                {{ csrf_field() }}
+                                <button type="submit" class="button download-button">
+                                    <span class="icon">
+                                        <i class="fa fa-download"></i>
+                                    </span>
+                                    <span>
+                                        {{ __('Generate package') }}
+                                    </span>
+                                </button>
+                            </form>
                             
                         </td>
                     </tr>
