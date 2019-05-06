@@ -21,6 +21,7 @@ Route::get('/publishlist', function () {
                         array("trip_id" => 15, "trip_name" => "Block2: Getting to Work"),
                         array("trip_id" => 29, "trip_name" => "Block3: How Washington Works"),
                         array("trip_id" => 34, "trip_name" => "Block4: Pioneering Innovation"),
+                        array("trip_id" => 25, "trip_name" => "Block5: The Power of Pluralism"),
                         array("trip_id" => 40, "trip_name" => "Other Learning Activities")
                         /*array("trip_id" => 25, "trip_name" => "Block5: The Power of Pluralism")*/);
     $json = json_encode($trip_list);
@@ -55,6 +56,7 @@ Route::get('/publishlistfrench', function () {
                         array("trip_id" => 19, "trip_name" => "Bloc 2: Se Mettre au travail"),
                         array("trip_id" => 30, "trip_name" => "Bloc 3: Les rouages de Washington"),
                         array("trip_id" => 38, "trip_name" => "Bloc 4: Innovation pionnière"),
+                        array("trip_id" => 31, "trip_name" => "Bloc 5: Le pouvoir du pluralisme"),
                         array("trip_id" => 43, "trip_name" => "Autres activités d'apprentissage")
                         /*array("trip_id" => 31, "trip_name" => "Bloc 5: Le pouvoir du pluralisme")*/);
     $json = json_encode($trip_list);
