@@ -43,8 +43,8 @@ Route::get('/publishlistadmin', function () {
                         array("trip_id" => 39, "trip_name" => "Block6: Northern Study Tours"),
                         array("trip_id" => 27, "trip_name" => "Block7: Leading in the Global Arena"),
                         array("trip_id" => 28, "trip_name" => "Block8: Leading Into the Next Decade and Closing Ceremony"),
-                        array("trip_id" => 40, "trip_name" => "Other Learning Activities"),
-                        array("trip_id" => 1, "trip_name" => "ELDP Demo")
+                        array("trip_id" => 40, "trip_name" => "Other Learning Activities")
+                        //array("trip_id" => 1, "trip_name" => "ELDP Demo")
                     );
     $json = json_encode($trip_list);
     return $json;
