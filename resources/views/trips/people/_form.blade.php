@@ -42,7 +42,28 @@
     <p class="control">
         <label class="checkbox">
             {{ Form::checkbox('is_participant', 1, $person->is_participant) }}
-            Check the box if the person is a particiant
+            Check the box if the person is a participant
         </label>
     </p>
 </div>
+
+<div class="field">
+    <!--<p class="control">
+        <label class="label">
+            Category 
+            {{ Form::select('category', array('Speaker' => 'Speaker', 'Facilitator' => 'Facilitator', 'CSPS Staff' => 'CSPS Staff'), $person->category, array('class' => 'dropdown-content', 'placeholder' => 'Please select ...') ) }}
+        </label>
+     </p>-->
+      <label class="label">Category</label>
+        <p class="control">
+            <span class="select">
+                <select name="category">
+                    <option value="">Select a category</option>
+                    <option value="Speaker" {{ old('category', $person->category) == 'Speaker'? 'selected' : ''}}>Speaker</option>
+                    <option value="Distinguished Fellow" {{ old('category', $person->category) == 'Facilitator'? 'selected' : ''}}>Distinguished Fellow</option>
+                    <option value="School Staff" {{ old('category', $person->category) == 'School Staff'? 'selected' : ''}}>School Staff</option>
+                </select>
+            </span>
+        </p> 
+</div> 
+

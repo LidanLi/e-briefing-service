@@ -27,7 +27,8 @@ class PeopleController extends Controller
             'telephone' => $request->telephone,
             'title' => $request->title,
             'body' => $request->body,
-            'is_participant' => $request->has('is_participant')
+            'is_participant' => $request->has('is_participant'),
+            'category' => $request->category
         ]);
 
         if($request->hasFile('image')) {

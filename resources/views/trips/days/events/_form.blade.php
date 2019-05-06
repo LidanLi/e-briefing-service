@@ -27,7 +27,7 @@
 </div>
 
 <div class="field">
-    <label class="label" for="location_name">{{ __('Location name') }} (required)</label>
+    <label class="label" for="location_name">{{ __('Location name') }}</label>
     <div class="control">
         <input type="text" class="input" name="location_name" id="location_name" value="{{ old('location_name', $event->location_name) }}">
     </div>

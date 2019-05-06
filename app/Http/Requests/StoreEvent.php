@@ -25,8 +25,8 @@ class StoreEvent extends FormRequest
     {
         return [
             'title' => 'required|max:255',
-            'time_from' => 'required',
-            'location_name' => 'required'
+            'time_from' => 'required'
+            //'location_name' => 'required'
         ];
     }
 }
