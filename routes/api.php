@@ -22,6 +22,10 @@ Route::get('/publishlist', function () {
                         array("trip_id" => 29, "trip_name" => "Block3: How Washington Works"),
                         array("trip_id" => 34, "trip_name" => "Block4: Pioneering Innovation"),
                         array("trip_id" => 25, "trip_name" => "Block5: The Power of Pluralism"),
+                        array("trip_id" => 39, "trip_name" => "Block6: Northern Study Tours (Iqaluit)"),
+                        array("trip_id" => 45, "trip_name" => "Block6: Northern Study Tours (Whitehorse)"),
+                        array("trip_id" => 27, "trip_name" => "Block7: Leading in the Global Arena"),
+                        array("trip_id" => 28, "trip_name" => "Block8: Leading Into the Next Decade and Closing Ceremony"),
                         array("trip_id" => 40, "trip_name" => "Other Learning Activities")
                         /*array("trip_id" => 25, "trip_name" => "Block5: The Power of Pluralism")*/);
     $json = json_encode($trip_list);
@@ -41,7 +45,8 @@ Route::get('/publishlistadmin', function () {
                         array("trip_id" => 29, "trip_name" => "Block3: How Washington Works"),
                         array("trip_id" => 34, "trip_name" => "Block4: Pioneering Innovation"),
                         array("trip_id" => 25, "trip_name" => "Block5: The Power of Pluralism"),
-                        array("trip_id" => 39, "trip_name" => "Block6: Northern Study Tours"),
+                        array("trip_id" => 39, "trip_name" => "Block6: Northern Study Tours (Iqaluit)"),
+                        array("trip_id" => 45, "trip_name" => "Block6: Northern Study Tours (Whitehorse)"),
                         array("trip_id" => 27, "trip_name" => "Block7: Leading in the Global Arena"),
                         array("trip_id" => 28, "trip_name" => "Block8: Leading Into the Next Decade and Closing Ceremony"),
                         array("trip_id" => 40, "trip_name" => "Other Learning Activities")
@@ -57,6 +62,10 @@ Route::get('/publishlistfrench', function () {
                         array("trip_id" => 30, "trip_name" => "Bloc 3: Les rouages de Washington"),
                         array("trip_id" => 38, "trip_name" => "Bloc 4: Innovation pionnière"),
                         array("trip_id" => 31, "trip_name" => "Bloc 5: Le pouvoir du pluralisme"),
+                        array("trip_id" => 35, "trip_name" => "Bloc 6: Visite d'étude dans le Nord (Iqaluit)"),
+                        array("trip_id" => 44, "trip_name" => "Bloc 6: Visite d'étude dans le Nord (Whitehorse)"),
+                        array("trip_id" => 32, "trip_name" => "Bloc 7: Le leadership et la mondialisation"),
+                        array("trip_id" => 33, "trip_name" => "Bloc 8: Diriger au cours de la prochaine décennie et cérémonie de clôture"),
                         array("trip_id" => 43, "trip_name" => "Autres activités d'apprentissage")
                         /*array("trip_id" => 31, "trip_name" => "Bloc 5: Le pouvoir du pluralisme")*/);
     $json = json_encode($trip_list);
@@ -75,9 +84,10 @@ Route::get('/publishlistfrenchadmin', function () {
                         array("trip_id" => 30, "trip_name" => "Bloc 3: Les rouages de Washington"),
                         array("trip_id" => 38, "trip_name" => "Bloc 4: Innovation pionnière"),
                         array("trip_id" => 31, "trip_name" => "Bloc 5: Le pouvoir du pluralisme"),
-                        array("trip_id" => 35, "trip_name" => "Bloc 6: Tour d'étude du nord"),
+                        array("trip_id" => 35, "trip_name" => "Bloc 6: Visite d'étude dans le Nord (Iqaluit)"),
+                        array("trip_id" => 44, "trip_name" => "Bloc 6: Visite d'étude dans le Nord (Whitehorse)"),
                         array("trip_id" => 32, "trip_name" => "Bloc 7: Le leadership et la mondialisation"),
-                        array("trip_id" => 33, "trip_name" => "Bloc 8: Entrer dans la prochaine décennie"),
+                        array("trip_id" => 33, "trip_name" => "Bloc 8: Diriger au cours de la prochaine décennie et cérémonie de clôture"),
                         array("trip_id" => 43, "trip_name" => "Autres activités d'apprentissage")
 
                     );

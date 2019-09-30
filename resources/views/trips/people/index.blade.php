@@ -45,31 +45,64 @@
                 There are no People added to this Course yet!
             @endunless
 
-            @foreach($people as $person)
-                <div class="card">
-                    <div class="card-content">
-                        <div class="columns">
-                            @if($person->image)
-                                <div class="column is-3">
-                                    <img src="{{ url('storage/' . $person->image) }}" class="person-photo">
+            <h3><strong>Participants</strong></h3>
+            @foreach($people->sortBy('last_name') as $person)
+                @if($person->is_participant)
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="columns">
+                                @if($person->image)
+                                    <div class="column is-3">
+                                        <img src="{{ url('storage/' . $person->image) }}" class="person-photo">
+                                    </div>
+                                @endif
+                                <div class="column">
+                                    <h3 class="title is-3">{{ $person->name }}</h3>
+                                    <p>
+                                        @if($person->title)
+                                            <strong>{{ $person->title }}</strong> |
+                                        @endif
+                                        {{ $person->telephone }}
+                                    </p>
+
+                                    <a href="{{ route('people.edit', ['person' => $person]) }}" class="button is-default">Edit</a>
+
+                                    <a href="" class="button is-danger delete-item" data-id="{{ $person->id }}">Delete</a>
                                 </div>
-                            @endif
-                            <div class="column">
-                                <h3 class="title is-3">{{ $person->name }}</h3>
-                                <p>
-                                    @if($person->title)
-                                        <strong>{{ $person->title }}</strong> |
-                                    @endif
-                                    {{ $person->telephone }}
-                                </p>
-
-                                <a href="{{ route('people.edit', ['person' => $person]) }}" class="button is-default">Edit</a>
-
-                                <a href="" class="button is-danger delete-item" data-id="{{ $person->id }}">Delete</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
+            @endforeach
+
+            <h3><strong>Contacts</strong></h3>
+            @foreach($people->sortBy('last_name') as $person)
+                @if($person->is_participant == 0)
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="columns">
+                                @if($person->image)
+                                    <div class="column is-3">
+                                        <img src="{{ url('storage/' . $person->image) }}" class="person-photo">
+                                    </div>
+                                @endif
+                                <div class="column">
+                                    <h3 class="title is-3">{{ $person->name }}</h3>
+                                    <p>
+                                        @if($person->title)
+                                            <strong>{{ $person->title }}</strong> |
+                                        @endif
+                                        {{ $person->telephone }}
+                                    </p>
+
+                                    <a href="{{ route('people.edit', ['person' => $person]) }}" class="button is-default">Edit</a>
+
+                                    <a href="" class="button is-danger delete-item" data-id="{{ $person->id }}">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
             @endforeach
         </div>
     </div>

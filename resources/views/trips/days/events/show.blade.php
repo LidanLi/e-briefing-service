@@ -44,7 +44,7 @@
                     </dl>
                 </div>
                 <div class="column">
-                    <h3 class="title">Contacts
+                   {{-- <h3 class="title">Contacts
                         <button class="button is-default pull-right" @click="isContactModalActive = true">Add a Contact</button>
                     </h3>
 
@@ -70,10 +70,10 @@
                             </div>
                         </div>
 
-                    @endforeach
+                    @endforeach --}}
 
-                    <h3 class="title">Participants
-                        <button class="button is-default pull-right" @click="isParticipantModalActive = true">Add a Participant</button>
+                    <h3 class="title">Speakers
+                        <button class="button is-default pull-right" @click="isParticipantModalActive = true">Add a Speaker</button>
                     </h3>
 
                     @unless($event->participants->count())
