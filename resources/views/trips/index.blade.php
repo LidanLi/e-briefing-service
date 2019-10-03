@@ -17,7 +17,13 @@
     @unless($trips->count())
         {{ __('There are currently no courses defined') }}
     @else
-        <table class="table">
+
+      <div>
+           <list-table
+            :csrf_token="'{{ csrf_token() }}'">
+            </list-table>
+       </div> 
+       <!-- <table class="table">
             <thead>
                 <tr>
                     <th>{{ __('Course name') }}</th>
@@ -68,6 +74,6 @@
                     </tr>
                 @endforeach
             </tbody>
-        </table>
+        </table>-->
     @endunless
 @endsection

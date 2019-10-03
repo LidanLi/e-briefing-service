@@ -122,4 +122,13 @@ class TripController extends Controller
 
         
     }
+
+    public function getTrips()
+    {
+        $trips = request()->user()->is_admin ? Trip::all() : request()->user()->trips;
+
+        $trips->each->append('owner');
+        
+        return response()->json($trips);
+    }
 }

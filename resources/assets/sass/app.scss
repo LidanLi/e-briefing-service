@@ -47,3 +47,42 @@ nav.sidebar {
     padding-top: 10px;
   }
 }
+
+.users-style {
+
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+
+  .table-style {
+      margin-bottom: 10px;
+      input {
+          width: 175px;
+      }
+     .control {
+          float: right;
+     }
+
+  }
+
+
+  nav > a {
+    color: black !important;
+  }
+}
+
+h1 {
+  text-align: left;
+  font-size: 30px;
+}
+
+.pagination {
+  justify-content: flex-end !important;
+  .page-stats {
+      align-items: center;
+      margin-right: 5px;
+  }
+  i {
+      color: black !important;
+  }
+}

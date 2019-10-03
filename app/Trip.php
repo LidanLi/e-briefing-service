@@ -42,4 +42,8 @@ class Trip extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+      public function getOwnerAttribute() {
+        return User::where('id', $this->created_by_id)->value('name');
+    }
 }
