@@ -52,7 +52,7 @@ class DayEventsController extends Controller
             'is_meal' => $request->has('is_meal')
         ]);
 
-        return redirect()->route('events.show', $event)->with('success', 'Event created!');
+        return redirect()->route('events.show', $event)->with('success', 'Item created!');
     }
 
 

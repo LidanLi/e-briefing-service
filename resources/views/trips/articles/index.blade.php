@@ -30,7 +30,7 @@
         @endpush
 
         <div class="column">
-            <h1 class="title">{{ $trip->name }} "My Trip"
+            <h1 class="title">{{ $trip->name }} "My Week"
                 <a href="{{ route('trips.articles.create', $trip) }}" class="is-size-6">
                     <span class="icon">
                         <i class="fa fa-plus-circle"></i>
@@ -42,7 +42,7 @@
             @include('layouts.flash')
 
             @unless($trip->articles->count())
-                There are no Articles added to this Trip yet!
+                There are no Articles added to this Week yet!
             @endunless
 
             @foreach($articles as $article)

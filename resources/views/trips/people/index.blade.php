@@ -42,7 +42,7 @@
             @include('layouts.flash')
 
             @unless($trip->people->count())
-                There are no People added to this Trip yet!
+                There are no People added to this Week yet!
             @endunless
 
             @foreach($people as $person)

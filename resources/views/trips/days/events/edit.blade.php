@@ -7,7 +7,7 @@
         @endpush
 
         <div class="column">
-            <h1 class="title">{{ $event->day->name }} : Edit an Event</h1>
+            <h1 class="title">{{ $event->day->name }} : Edit an Item</h1>
 
             @include('layouts.flash')
 
@@ -32,7 +32,7 @@
                         {!! Form::select('person_id', $people, null, ['placeholder' => 'Select a person']) !!}
                     </span>
                 </p>
-                <p class="help">You may add People to this Event.  A person can be a Contact and/or a Participant</p>
+                <p class="help">You may add People to this Item.  A person can be a Contact and/or a Participant</p>
             </div>
         </div>
         <button class="modal-close"></button>

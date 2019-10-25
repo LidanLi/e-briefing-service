@@ -30,7 +30,7 @@
                     </p>
                 </div>
 
-                <strong>Document file (PDF only)</strong>
+                <strong>Document file</strong>
                 <div class="file has-name">
                     <label class="file-label">
                         <input class="file-input" type="file" name="file" id="file">

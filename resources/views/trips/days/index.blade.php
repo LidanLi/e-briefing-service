@@ -29,7 +29,7 @@
         @endpush
 
         <div class="column">
-            <h1 class="title">{{ $trip->name }} Itinerary
+            <h1 class="title">{{ $trip->name }} Schedule
                 <a href="{{ route('trips.days.create', $trip) }}" class="is-size-6">
                     <span class="icon">
                         <i class="fa fa-plus-circle"></i>
@@ -41,7 +41,7 @@
             @include('layouts.flash')
 
             @unless($trip->days->count())
-                There are no Days added to this Trip yet!
+                There are no Days added to this Week yet!
             @endunless
 
             @if($trip->days->count())

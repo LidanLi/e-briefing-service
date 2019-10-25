@@ -57,7 +57,7 @@ class TripController extends Controller
           'code' => $trip->id
         ]);
 
-        return redirect()->route('trips.days.index', $trip)->with('success', __('Trip created.  Now you may add Days, People, Articles and Documents to your Trip.'));
+        return redirect()->route('trips.days.index', $trip)->with('success', __('Week created.  Now you may add Days, People, Articles and Documents to your Week Schedule.'));
     }
 
     /**
@@ -123,5 +123,14 @@ class TripController extends Controller
         $this->authorize('manage', $trip);
 
         
+    }
+
+    public function getTrips()
+    {
+        $trips = request()->user()->is_admin ? Trip::all() : request()->user()->trips;
+
+        $trips->each->append('owner');
+        
+        return response()->json($trips);
     }
 }

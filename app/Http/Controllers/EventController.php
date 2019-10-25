@@ -50,7 +50,7 @@ class EventController extends Controller
             'is_meal' => $request->has('is_meal')
         ]);
 
-        return redirect()->route('events.show', $event)->with('success', 'Event saved!');
+        return redirect()->route('events.show', $event)->with('success', 'Item saved!');
     }
 
     public function destroy(Event $event)
@@ -59,6 +59,6 @@ class EventController extends Controller
         
         $event->delete();
 
-        return redirect()->back()->with('success', 'Event deleted');
+        return redirect()->back()->with('success', 'Item deleted');
     }
 }

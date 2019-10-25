@@ -7,7 +7,7 @@
         @endpush
 
         <div class="column">
-            <h1 class="title">{{ $day->name }} : Create an Event</h1>
+            <h1 class="title">{{ $day->name }} : Create an Item</h1>
 
             @include('layouts.flash')
 

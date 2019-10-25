@@ -50,7 +50,7 @@
 
                     @unless($event->contacts->count())
                         <div class="notification is-info">
-                            There are no Contacts associated with this Event yet.
+                            There are no Contacts associated with this Item yet.
                         </div>
                     @endunless
 
@@ -78,7 +78,7 @@
 
                     @unless($event->participants->count())
                         <div class="notification is-info">
-                            There are no people associated with this Event yet.
+                            There are no people associated with this Item yet.
                         </div>
                     @endunless
 
@@ -109,7 +109,7 @@
 
                     @unless($event->documents->count())
                         <div class="notification is-info">
-                            There are no Documents associated with this Event yet.
+                            There are no Documents associated with this Item yet.
                         </div>
                     @endunless
 

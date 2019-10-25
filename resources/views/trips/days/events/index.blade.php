@@ -34,7 +34,7 @@
                     <span class="icon">
                         <i class="fa fa-plus-circle"></i>
                     </span>
-                    Add an Event
+                    Add an Item
                 </a>
             </h1>
 
@@ -42,7 +42,7 @@
 
             @unless($day->events->count())
                 <div class="notification is-info">
-                    No Events have been added to this day yet!
+                    No Items have been added to this day yet!
                 </div>
             @endunless
 
