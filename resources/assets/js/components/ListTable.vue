@@ -64,6 +64,19 @@
                                 </span>
                             </button>
                         </form>
+
+                        <form method="post" :action="'/trips/' + trip.id + '/delete'" style="float:left">
+                           <input type="hidden" name="_method" value="post">
+                           <input type="hidden" name="_token" :value="csrf_token">
+                            <button type="submit" class="button download-button">
+                                <span class="icon">
+                                    <i class="fa fa-times"></i>
+                                </span>
+                                <span>
+                                    {{ __('Delete Week') }}
+                                </span>
+                            </button>
+                        </form>
                     </td>
                 </tr>
             </tbody>

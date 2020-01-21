@@ -25,6 +25,7 @@ Route::get('alltrips', 'TripController@getTrips');
 
 Route::post('trips/{trip}/generate', ['as' => 'trips.generate', 'uses' => 'GenerateTripPackage']);
 Route::post('trips/{trip}/copy', ['as' => 'trips.copy', 'uses' => 'GenerateTripCopy']);
+Route::post('trips/{trip}/delete', ['as' => 'trips.delete', 'uses' => 'GenerateTripDelete']);
 
 /*
  * Days

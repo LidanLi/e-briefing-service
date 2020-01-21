@@ -58,6 +58,8 @@ class EventDocumentsController extends Controller
     {
         $event->documents()->detach($document);
 
+        $document->delete();
+
         return redirect()->back()->with('success', 'Document removed');
     }
 }
