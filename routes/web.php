@@ -108,3 +108,5 @@ Route::put('events/{event}/documents', ['as' => 'events.documents.add', 'uses' =
 Route::get('events/{event}/documents/create', ['as' => 'events.documents.create', 'uses' => 'EventDocumentsController@create']);
 Route::post('events/{event}/documents', ['as' => 'events.documents.store', 'uses' => 'EventDocumentsController@store']);
 Route::delete('events/{event}/documents/{document}/remove', ['as' => 'events.documents.remove', 'uses' => 'EventDocumentsController@remove']);
+
+Route::delete('/documents','DocumentsController@destroyAll')->name('destroyall');

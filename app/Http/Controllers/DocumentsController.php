@@ -68,4 +68,36 @@ class DocumentsController extends Controller
 
         return redirect()->back()->with('success', 'Document deleted');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param Document $document
+     * @return \Illuminate\Http\Response
+     * @internal param Request
+     */
+    public function destroyAll(Request $request)
+    {
+        
+        $data = $request->all();
+        $list = explode(',',$data['pass_checkedvalue']);
+        
+            if (!in_array(NULL, $list))
+            {
+                foreach ($list as $i => $id) {
+
+                $document=Document::find($id);
+
+                $document->delete();
+                }
+
+               return redirect()->back()->with('success', 'All documents removed'); 
+            }
+            else
+            {
+                return redirect()->back()->with('warning', 'No document selected');
+            }
+            
+        
+    }
 }

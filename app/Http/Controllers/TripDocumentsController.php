@@ -23,9 +23,14 @@ class TripDocumentsController extends Controller
     {
         $this->authorize('manage', $trip);
 
+        $documentsByType = $trip->documents->groupBy('document_type');
+        $items = $documentsByType->all();
+        ksort($items);
+        $documentsByType = collect($items);
+
         return view('trips.documents.index', [
             'trip' => $trip,
-            'documentsByType' => $trip->documents->groupBy('document_type')
+            'documentsByType' => $documentsByType
         ]);
     }
 

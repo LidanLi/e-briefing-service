@@ -11,6 +11,21 @@
             $('#delete_modal').addClass('is-active');
         });
 
+         $('.delete-all-items').click(function (e) {
+            e.preventDefault();
+            
+            var checkedValues = $('.checkboxes:checked').map(function(){ return this.value; }).get();
+            var ids = $('#hidden_checkedinput').val(checkedValues.join(','));
+            //console.log(checkedValues);
+            //console.log(ids);
+           // $('#delete_all_form')[0].action = $('#delete_all_form')[0].action.replace('__id', checkedValues);
+            $('#delete_all_modal').addClass('is-active');
+        });
+
+        $(".cb_check_uncheck_all").click(function(){
+            $("input:checkbox").not(this).prop("checked", this.checked);
+        });
+
         $('.modal-background').click(function() {
             $(this).parent().removeClass('is-active');
         });
@@ -45,11 +60,19 @@
                 There are no Documents added to this Week yet!
             @endunless
 
+             @if($trip->documents->count())
+
+              <input type="checkbox" class="cb_check_uncheck_all" id="cb_check_uncheck_all"> Check All/ Uncheck All  </input>
+              <a class="button is-danger delete-all-items" id="btn_multidelete" value="btn_display_value">Delete selected</a>
+              
+            @endif
+
             @foreach($documentsByType as $type => $documents)
                 <h2>{{ $type }}</h2>
                 <table class="table">
                     @foreach($documents as $document)
                         <tr>
+                            <td><input type="checkbox" name="deletedDocument[]" class="checkboxes" value="{{$document->id}}"></td>
                             <td><a href="{{ url('storage/' . $document->file) }}">{{ $document->name }}</a>
                                 @if($document->is_protected)
                                     <span class="icon">
@@ -85,4 +108,23 @@
         </div>
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
+
+    <div class="modal" id="delete_all_modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <div class="modal-card-body">
+                        Are you sure you want to delete all selected items?
+                    </div>
+                    <div class="modal-card-foot">
+                        <form class="is-inline" action="{{ route('destroyall') }}" id="delete_all_form" method="POST">
+                            {{ method_field('DELETE') }}
+                            {{ csrf_field() }}
+                            <input name="pass_checkedvalue" type="hidden" value="pass_checkedvalue" id="hidden_checkedinput">
+                            <button type="button" class="cancel-modal button is-default">Cancel</button>
+                            <button type="submit" class="button is-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
 @endsection
